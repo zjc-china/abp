@@ -13,6 +13,9 @@ public interface ITypeList : ITypeList<object>
 
 /// <summary>
 /// Extends <see cref="IList{Type}"/> to add restriction a specific base type.
+/// STUDYCODE:
+/// https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/keywords/in-generic-modifier
+/// 对于泛型类型参数，in 关键字可指定类型参数是逆变的。 可以在泛型接口和委托中使用 in 关键字
 /// </summary>
 /// <typeparam name="TBaseType">Base Type of <see cref="Type"/>s in this list</typeparam>
 public interface ITypeList<in TBaseType> : IList<Type>
