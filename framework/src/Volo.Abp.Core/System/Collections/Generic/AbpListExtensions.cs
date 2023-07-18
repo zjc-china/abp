@@ -192,6 +192,7 @@ public static class AbpListExtensions
     /// <returns>
     /// Returns a new list ordered by dependencies.
     /// If A depends on B, then B will come before than A in the resulting list.
+    /// UNSTUDYCODE: topological sorting 拓扑无向图排序
     /// </returns>
     public static List<T> SortByDependencies<T>(
         this IEnumerable<T> source,
