@@ -101,7 +101,7 @@ public class AbpInputTagHelperService : AbpTagHelperService<AbpInputTagHelper>
 
     protected virtual string GetContent(TagHelperContext context, TagHelperOutput output, string label, string inputHtml, string validation, string infoHtml, bool isCheckbox)
     {
-        var innerContent = isCheckbox ?
+        var innerContent = isCheckbox || TagHelper.FloatingLabel ?
             inputHtml + label :
             label + inputHtml;
 
@@ -397,7 +397,7 @@ public class AbpInputTagHelperService : AbpTagHelperService<AbpInputTagHelper>
         }
     }
 
-    protected virtual TextArea TryGetTextAreaAttribute(TagHelperOutput output)
+    protected virtual TextArea? TryGetTextAreaAttribute(TagHelperOutput output)
     {
         var textAreaAttribute = TagHelper.AspFor.ModelExplorer.GetAttribute<TextArea>();
 
@@ -479,14 +479,14 @@ public class AbpInputTagHelperService : AbpTagHelperService<AbpInputTagHelper>
 
     protected virtual bool IsOutputHidden(TagHelperOutput inputTag)
     {
-        return inputTag.Attributes.Any(a => a.Name.ToLowerInvariant() == "type" && a.Value.ToString().ToLowerInvariant() == "hidden");
+        return inputTag.Attributes.Any(a => a.Name.ToLowerInvariant() == "type" && a.Value.ToString()!.ToLowerInvariant() == "hidden");
     }
 
     protected virtual string GetIdAttributeValue(TagHelperOutput inputTag)
     {
         var idAttr = inputTag.Attributes.FirstOrDefault(a => a.Name == "id");
 
-        return idAttr != null ? idAttr.Value.ToString() : string.Empty;
+        return idAttr != null ? idAttr.Value.ToString()! : string.Empty;
     }
 
     protected virtual string GetIdAttributeAsString(TagHelperOutput inputTag)
