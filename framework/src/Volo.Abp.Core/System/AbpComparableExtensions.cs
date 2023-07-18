@@ -7,6 +7,7 @@ public static class AbpComparableExtensions
 {
     /// <summary>
     /// Checks a value is between a minimum and maximum value.
+    /// 学到这里
     /// </summary>
     /// <param name="value">The value to be checked</param>
     /// <param name="minInclusiveValue">Minimum (inclusive) value</param>
