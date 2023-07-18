@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CoreModule } from '@abp/ng.core';
 import { registerLocale } from '@abp/ng.core/locale';
-import { ThemeSharedModule } from '@abp/ng.theme.shared';
+import { InternetConnectionStatusComponent, ThemeSharedModule } from '@abp/ng.theme.shared';
 import { ThemeLeptonXModule } from '@abp/ng.theme.lepton-x';
 import { SideMenuLayoutModule } from '@abp/ng.theme.lepton-x/layouts';
 import { IdentityConfigModule } from '@abp/ng.identity/config';
@@ -12,7 +12,7 @@ import { SettingManagementConfigModule } from '@abp/ng.setting-management/config
 import { TenantManagementConfigModule } from '@abp/ng.tenant-management/config';
 import { FeatureManagementModule } from '@abp/ng.feature-management';
 import { AccountConfigModule } from '@abp/ng.account/config';
-import { AccountLayoutModule } from '@abp/ng.theme.lepton-x/account/account-layout';
+import { AccountLayoutModule } from '@abp/ng.theme.lepton-x/account';
 import { environment } from '../environments/environment';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -39,6 +39,7 @@ import { APP_ROUTE_PROVIDER } from './route.provider';
     ThemeLeptonXModule.forRoot(),
     SideMenuLayoutModule.forRoot(),
     AccountLayoutModule.forRoot(),
+    InternetConnectionStatusComponent
   ],
   providers: [APP_ROUTE_PROVIDER],
   declarations: [AppComponent],
