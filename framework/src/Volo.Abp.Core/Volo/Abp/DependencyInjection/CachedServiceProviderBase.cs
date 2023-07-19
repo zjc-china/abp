@@ -6,6 +6,10 @@ namespace Volo.Abp.DependencyInjection;
 public abstract class CachedServiceProviderBase : ICachedServiceProviderBase
 {
     protected IServiceProvider ServiceProvider { get; }
+
+    /// <summary>
+    /// STUDYCODE:Lazy<T> 类是一种延迟加载机制，它允许你在需要时才初始化对象或执行代码
+    /// </summary>
     protected ConcurrentDictionary<Type, Lazy<object?>> CachedServices { get; }
 
     protected CachedServiceProviderBase(IServiceProvider serviceProvider)

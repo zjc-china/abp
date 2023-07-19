@@ -8,6 +8,7 @@ public class ExceptionNotificationContext
 {
     /// <summary>
     /// The exception object.
+    /// 学到这里
     /// </summary>
     [NotNull]
     public Exception Exception { get; }
