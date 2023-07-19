@@ -2,6 +2,9 @@
 using Microsoft.Extensions.Logging;
 
 namespace Volo.Abp.Logging;
+/// <summary>
+/// 学到这里
+/// </summary>
 
 public class AbpInitLogEntry
 {
