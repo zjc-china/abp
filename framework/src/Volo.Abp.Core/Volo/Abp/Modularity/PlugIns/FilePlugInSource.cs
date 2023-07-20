@@ -8,6 +8,11 @@ public class FilePlugInSource : IPlugInSource
 {
     public string[] FilePaths { get; }
 
+    /// <summary>
+    /// STUDYCODE:params 关键字用于定义方法的可变参数列表,只能用在方法的最后一个参数
+    /// 实例:new FilePlugInSource("2","1","3")
+    /// </summary>
+    /// <param name="filePaths"></param>
     public FilePlugInSource(params string[]? filePaths)
     {
         FilePaths = filePaths ?? new string[0];

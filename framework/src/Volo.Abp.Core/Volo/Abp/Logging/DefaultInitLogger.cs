@@ -30,6 +30,12 @@ public class DefaultInitLogger<T> : IInitLogger<T>
         return logLevel != LogLevel.None;
     }
 
+    /// <summary>
+    /// STUDYCODE:notnull 表示state不可为空  编译器会在编译时检查变量是否可能为空
+    /// </summary>
+    /// <typeparam name="TState"></typeparam>
+    /// <param name="state"></param>
+    /// <returns></returns>
     public virtual IDisposable BeginScope<TState>(TState state) where TState : notnull
     {
         return NullDisposable.Instance;

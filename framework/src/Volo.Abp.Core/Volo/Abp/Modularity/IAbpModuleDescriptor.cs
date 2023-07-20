@@ -8,6 +8,7 @@ public interface IAbpModuleDescriptor
 {
     /// <summary>
     /// Type of the module class.
+    /// 学到这里
     /// </summary>
     Type Type { get; }
 
