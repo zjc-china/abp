@@ -14,9 +14,6 @@ using Volo.Abp.Modularity;
 
 namespace Volo.Abp;
 
-/// <summary>
-/// 学到这里
-/// </summary>
 public abstract class AbpApplicationBase : IAbpApplication
 {
     [NotNull]
