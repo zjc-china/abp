@@ -11,7 +11,9 @@ using Volo.Abp.Uow;
 using Volo.Abp.Users;
 
 namespace Volo.Abp.Auditing;
-
+/// <summary>
+/// 拦截器执行流程图参考: https://www.processon.com/diagraming/64bc017724917141f9284af7
+/// </summary>
 public class AuditingInterceptor : AbpInterceptor, ITransientDependency
 {
     private readonly IServiceScopeFactory _serviceScopeFactory;

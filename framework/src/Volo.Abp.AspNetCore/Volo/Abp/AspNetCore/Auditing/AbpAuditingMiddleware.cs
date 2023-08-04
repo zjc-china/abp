@@ -11,6 +11,10 @@ using Volo.Abp.Users;
 
 namespace Volo.Abp.AspNetCore.Auditing;
 
+/// <summary>
+/// 审计中间件 
+/// 流程参考：审计拦截器执行流程图参考: https://www.processon.com/diagraming/64bc017724917141f9284af7
+/// </summary>
 public class AbpAuditingMiddleware : IMiddleware, ITransientDependency
 {
     private readonly IAuditingManager _auditingManager;

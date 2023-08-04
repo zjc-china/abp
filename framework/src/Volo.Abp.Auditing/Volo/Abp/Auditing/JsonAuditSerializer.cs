@@ -47,19 +47,20 @@ public class JsonAuditSerializer : IAuditSerializer, ITransientDependency
                                 }
                             }
 
-                            foreach (var property in jsonTypeInfo.Properties)
+                            foreach (JsonPropertyInfo property in jsonTypeInfo.Properties)
                             {
                                 if (Options.IgnoredTypes.Any(ignoredType => ignoredType.IsAssignableFrom(property.PropertyType)))
                                 {
                                     property.ShouldSerialize = (_, _) => false;
                                 }
 
+                                // STUDYCODE: AttributeProvider
                                 if (property.AttributeProvider != null &&
                                     property.AttributeProvider.GetCustomAttributes(typeof(DisableAuditingAttribute), false).Any())
                                 {
                                     property.ShouldSerialize = (_, _) => false;
                                 }
-
+                                // STUDYCODE: DeclaringType
                                 if (property.PropertyType.DeclaringType != null &&
                                     property.PropertyType.DeclaringType.IsDefined(typeof(DisableAuditingAttribute)))
                                 {
