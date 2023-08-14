@@ -23,6 +23,7 @@ public class CurrentTenant : ICurrentTenant, ITransientDependency
         return SetCurrent(id, name);
     }
 
+    // STUDYCODE: 注意此处的处理 再一个Using Scope内 修改租户，在此Scope完成Dispose时回到之前租户
     private IDisposable SetCurrent(Guid? tenantId, string? name = null)
     {
         var parentScope = _currentTenantAccessor.Current;

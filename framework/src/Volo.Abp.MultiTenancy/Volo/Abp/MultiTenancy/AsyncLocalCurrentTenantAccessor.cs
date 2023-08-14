@@ -16,6 +16,7 @@ public class AsyncLocalCurrentTenantAccessor : ICurrentTenantAccessor
 
     private AsyncLocalCurrentTenantAccessor()
     {
+        // STUDYCODE: AsyncLocal 
         _currentScope = new AsyncLocal<BasicTenantInfo?>();
     }
 }

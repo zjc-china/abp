@@ -4,7 +4,9 @@ using System.Threading.Tasks;
 using Volo.Abp.MultiTenancy;
 
 namespace Volo.Abp.Settings;
-
+/// <summary>
+/// 学到这里 2023-08-14
+/// </summary>
 public class TenantSettingValueProvider : SettingValueProvider
 {
     public const string ProviderName = "T";

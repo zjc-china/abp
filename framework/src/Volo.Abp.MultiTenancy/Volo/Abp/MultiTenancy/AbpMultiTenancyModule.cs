@@ -27,6 +27,7 @@ public class AbpMultiTenancyModule : AbpModule
 
         Configure<AbpSettingOptions>(options =>
         {
+            // STUDYCODE: InsertAfter  部分服务需要有序的处理
             options.ValueProviders.InsertAfter(t => t == typeof(GlobalSettingValueProvider), typeof(TenantSettingValueProvider));
         });
 
